@@ -38,10 +38,12 @@ out/
 # Backend (self-contained)
 # ====================
 backend/node_modules/
+backend/dist/
 backend/.env
 backend/.env.local
 backend/.env.production
 !backend/.env.example
+backend/uploads/
 
 # ====================
 # Vite / Frontend
@@ -52,6 +54,18 @@ Frontend/.env
 Frontend/.env.local
 Frontend/.env.production
 !Frontend/.env.example
+Frontend/.cache/
+Frontend/build/
+
+# ====================
+# Cardiot Bot
+# ====================
+cardiot-bot-main/node_modules/
+cardiot-bot-main/dist/
+cardiot-bot-main/.env
+cardiot-bot-main/.env.local
+cardiot-bot-main/.env.production
+!cardiot-bot-main/.env.example
 
 # ====================
 # Uploaded Media Files
@@ -66,14 +80,6 @@ media/
 *.pdf
 *.docx
 *.xlsx
-
-# ====================
-# Cardiot Bot
-# ====================
-cardiot-bot-main/node_modules/
-cardiot-bot-main/dist/
-cardiot-bot-main/.env
-!cardiot-bot-main/.env.example
 
 # ====================
 # Logs
@@ -107,3 +113,4 @@ supabase/.temp/
 *.cert
 .vercel
 .netlify
+bun.lockb
