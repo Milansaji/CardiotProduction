@@ -1,0 +1,34 @@
+{
+  "name": "whatsapp-crm",
+  "version": "1.0.0",
+  "description": "WhatsApp CRM — monorepo root (orchestration + PM2)",
+  "private": true,
+  "scripts": {
+    "// --- Development ---": "",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix Frontend",
+    "dev:bot": "npm run dev --prefix cardiot-bot-main",
+    "// --- Install all sub-packages ---": "",
+    "install:all": "npm install --prefix backend && npm install --prefix Frontend && npm install --prefix cardiot-bot-main",
+    "// --- Build ---": "",
+    "build:frontend": "npm run build --prefix Frontend",
+    "build:bot": "npm run build --prefix cardiot-bot-main",
+    "build:all": "npm run build:frontend && npm run build:bot",
+    "// --- PM2 ---": "",
+    "pm2:start": "pm2 start ecosystem.config.cjs",
+    "pm2:start:prod": "pm2 start ecosystem.config.cjs --env production",
+    "pm2:stop": "pm2 stop all",
+    "pm2:restart": "pm2 restart all",
+    "pm2:reload": "pm2 reload all",
+    "pm2:delete": "pm2 delete all",
+    "pm2:logs": "pm2 logs",
+    "pm2:status": "pm2 list",
+    "pm2:save": "pm2 save",
+    "pm2:startup": "pm2 startup",
+    "// --- One-shot deploy ---": "",
+    "deploy": "npm run build:all && npm run pm2:start:prod && pm2 save"
+  },
+  "devDependencies": {
+    "pm2": "^5.4.3"
+  }
+}
